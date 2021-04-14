@@ -41,6 +41,7 @@
 #include <signal.h>
 #include <setjmp.h>
 #include <sys/mman.h>
+#include <sys/sysmacros.h>
 
 #ifndef linux
 #define __BYTE_ORDER BYTE_ORDER
@@ -1322,7 +1323,7 @@ struct dir_ent {
 };
 
 
-void inline add_dir_entry(char *name, char *pathname, void *data, struct directory *dir)
+void add_dir_entry(char *name, char *pathname, void *data, struct directory *dir)
 {
 		if((dir->count % DIR_ENTRIES) == 0)
 			if((dir->list = realloc(dir->list, (dir->count + DIR_ENTRIES) * sizeof(struct dir_ent *))) == NULL)

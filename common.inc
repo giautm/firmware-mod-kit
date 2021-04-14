@@ -8,7 +8,7 @@ Build_Tools ()
 		if [ ! -f "./Makefile" ]; then	
 			./configure 2>&1 >> /dev/null
 		fi
-		make -s
+		make -s all
 		if [ $? -eq 0 ]; then
 			cd - 2>&1 >> /dev/null
 		else
